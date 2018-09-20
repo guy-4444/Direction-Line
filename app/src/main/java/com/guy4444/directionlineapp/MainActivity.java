@@ -5,13 +5,11 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-import directionlineapp.guy4444.com.directionline.StepLineLayout;
+import directionlineapp.guy4444.com.directionline.DirectionLineLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    //        android:fillColor="#D80027"
-
-    StepLineLayout stepLayout_1;
+    DirectionLineLayout directionLineLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
             nums.add((int) (i*(360.0 / SIZE)));
         }
 
-        stepLayout_1 = (StepLineLayout) findViewById(R.id.stepLayout_1);
+        directionLineLayout = (DirectionLineLayout) findViewById(R.id.directionLineLayout);
 
-        stepLayout_1.setStepLines(this, StepLineLayout.LayoutOrientation.HORIZONTAL, 2, SIZE, R.color.skv_arrow_color, 80, R.drawable.ic_arrow);
-        for (int i = 0; i < stepLayout_1.getSize(); i++) {
-            stepLayout_1.setUnitDirection(i, nums.get(i));
+        directionLineLayout.setStepLines(this, DirectionLineLayout.LayoutOrientation.HORIZONTAL, 2, SIZE, R.color.skv_arrow_color, 80, R.drawable.ic_arrow);
+        for (int i = 0; i < directionLineLayout.getSize(); i++) {
+            directionLineLayout.setUnitDirection(i, nums.get(i));
         }
 
     }

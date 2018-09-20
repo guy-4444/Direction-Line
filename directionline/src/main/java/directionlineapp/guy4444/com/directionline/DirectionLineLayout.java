@@ -9,10 +9,10 @@ import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
-public class StepLineLayout extends LinearLayout {
+public class DirectionLineLayout extends LinearLayout {
 
     public int getSize() {
-        return stepLineViews.size();
+        return directionLineViews.size();
     }
 
     public enum LayoutOrientation {
@@ -20,7 +20,7 @@ public class StepLineLayout extends LinearLayout {
         HORIZONTAL;
     }
 
-    private ArrayList<StepLineView> stepLineViews;
+    private ArrayList<DirectionLineView> directionLineViews;
 
     private int mainColor   = Color.argb(255, 0, 0, 200);
     private int markerRadius = 20;
@@ -30,15 +30,15 @@ public class StepLineLayout extends LinearLayout {
     private int marker = 0;
     private int padding = 0;
 
-    public StepLineLayout(Context context) {
+    public DirectionLineLayout(Context context) {
         this(context, null, 0);
     }
 
-    public StepLineLayout(Context context, AttributeSet attrs) {
+    public DirectionLineLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public StepLineLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public DirectionLineLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
@@ -68,7 +68,7 @@ public class StepLineLayout extends LinearLayout {
     }
 
     private void setStepLines(Context context, LayoutOrientation _layoutOrientation, int numOfItems) {
-        stepLineViews = new ArrayList<>();
+        directionLineViews = new ArrayList<>();
 
         this.layoutOrientation = _layoutOrientation;
         if (layoutOrientation == LayoutOrientation.HORIZONTAL)
@@ -81,8 +81,8 @@ public class StepLineLayout extends LinearLayout {
         }
         else {
             for (int i = 0; i < numOfItems; i++) {
-                StepLineView stepLineView1 = getStepLineUnit(context, layoutOrientation, 100, stepLineViews.size());
-                stepLineViews.add(stepLineView1);
+                DirectionLineView directionLineView1 = getStepLineUnit(context, layoutOrientation, 100, directionLineViews.size());
+                directionLineViews.add(directionLineView1);
             }
         }
 
@@ -90,17 +90,17 @@ public class StepLineLayout extends LinearLayout {
     }
 
     private void attachListToView() {
-        for (int i = 0; i < stepLineViews.size(); i++) {
-            this.addView(stepLineViews.get(i));
+        for (int i = 0; i < directionLineViews.size(); i++) {
+            this.addView(directionLineViews.get(i));
         }
     }
 
     public void setUnitDirection(int unitIndex, int direction) {
-        if (unitIndex >= 0 &&  unitIndex < stepLineViews.size())
-            stepLineViews.get(unitIndex).setUnitDirection(direction);
+        if (unitIndex >= 0 &&  unitIndex < directionLineViews.size())
+            directionLineViews.get(unitIndex).setUnitDirection(direction);
     }
 
-    private StepLineView getStepLineUnit(Context context, LayoutOrientation layoutOrientation, int direction, int _position) {
+    private DirectionLineView getStepLineUnit(Context context, LayoutOrientation layoutOrientation, int direction, int _position) {
         // markerSize - default=20
         LinearLayout.LayoutParams linearParams;
         if (layoutOrientation == LayoutOrientation.HORIZONTAL)
@@ -110,16 +110,16 @@ public class StepLineLayout extends LinearLayout {
 
         float density = context.getResources().getDisplayMetrics().density;
 
-        StepLineView stepLineView = new StepLineView(context, null);
-        stepLineView.setMarkerSize(markerRadius);
-        stepLineView.setMainColor(mainColor);
-        stepLineView.setLayoutParams(linearParams);
-        stepLineView.setMarkerSize((int) (markerRadius * density));
-        stepLineView.setPadding(padding, padding, padding, padding);
-        stepLineView.setDrawables(marker);
-        stepLineView.setDirection(direction);
-        stepLineView.setPosition(_position);
+        DirectionLineView directionLineView = new DirectionLineView(context, null);
+        directionLineView.setMarkerSize(markerRadius);
+        directionLineView.setMainColor(mainColor);
+        directionLineView.setLayoutParams(linearParams);
+        directionLineView.setMarkerSize((int) (markerRadius * density));
+        directionLineView.setPadding(padding, padding, padding, padding);
+        directionLineView.setDrawables(marker);
+        directionLineView.setDirection(direction);
+        directionLineView.setPosition(_position);
 
-        return stepLineView;
+        return directionLineView;
     }
 }

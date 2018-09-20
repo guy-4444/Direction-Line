@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <directionlineapp.guy4444.com.directionline.StepLineLayout
-        android:id="@+id/stepLayout_1"
+    <directionlineapp.guy4444.com.directionline.DirectionLineLayout
+        android:id="@+id/directionLineLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"

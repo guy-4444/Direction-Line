@@ -14,7 +14,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 
-class StepLineView extends View {
+class DirectionLineView extends View {
 
     private Drawable mMarker;
     private int mMarkerSize;
@@ -30,7 +30,7 @@ class StepLineView extends View {
     private int padding = 0;
     Drawable a1;
 
-    public StepLineView(Context context, AttributeSet attrs) {
+    public DirectionLineView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         init(attrs);
