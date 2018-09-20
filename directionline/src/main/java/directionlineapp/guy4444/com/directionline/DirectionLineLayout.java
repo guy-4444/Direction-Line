@@ -100,6 +100,11 @@ public class DirectionLineLayout extends LinearLayout {
             directionLineViews.get(unitIndex).setUnitDirection(direction);
     }
 
+    public void setUnitColor(int unitIndex, int color) {
+        if (unitIndex >= 0 &&  unitIndex < directionLineViews.size())
+            directionLineViews.get(unitIndex).setUnitColor(color);
+    }
+
     private DirectionLineView getStepLineUnit(Context context, LayoutOrientation layoutOrientation, int direction, int _position) {
         // markerSize - default=20
         LinearLayout.LayoutParams linearParams;

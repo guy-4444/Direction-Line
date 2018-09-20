@@ -153,6 +153,8 @@ class DirectionLineView extends View {
         a1 = getDrawable(mContext, R.drawable.ic_arrow).mutate();
 
         a1.setColorFilter(mainColor, PorterDuff.Mode.SRC_IN);
+
+        this.setMarker(a1);
     }
 
     public void setDrawables(int customMarker) {
@@ -160,12 +162,13 @@ class DirectionLineView extends View {
             a1 = getDrawable(mContext, customMarker).mutate();
 
             a1.setColorFilter(mainColor, PorterDuff.Mode.SRC_IN);
+
+            this.setMarker(a1);
         }
         else {
             setDrawables();
         }
 
-        this.setMarker(a1);
     }
 
     public void setMainColor(int _mainColor) {
@@ -197,5 +200,10 @@ class DirectionLineView extends View {
 
     public void setDirection(int direction) {
         this.direction = direction;
+    }
+
+    public void setUnitColor(int _mainColor) {
+        this.mainColor = _mainColor;
+        setDrawables();
     }
 }
