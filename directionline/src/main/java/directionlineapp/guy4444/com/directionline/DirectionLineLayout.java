@@ -68,8 +68,8 @@ public class DirectionLineLayout extends LinearLayout {
     }
 
     private void setStepLines(Context context, LayoutOrientation _layoutOrientation, int numOfItems) {
+        this.removeAllViews();
         directionLineViews = new ArrayList<>();
-
         this.layoutOrientation = _layoutOrientation;
         if (layoutOrientation == LayoutOrientation.HORIZONTAL)
             this.setOrientation(LinearLayout.HORIZONTAL);

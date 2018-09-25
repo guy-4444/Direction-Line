@@ -3,6 +3,8 @@ package com.guy4444.directionlineapp;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -16,16 +18,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        directionLineLayout = (DirectionLineLayout) findViewById(R.id.directionLineLayout);
+
+        initView();
 
 
+        ((Button) findViewById(R.id.button)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                initView();
+            }
+        });
+    }
+
+    private void initView() {
         final int SIZE = 30;
-
         ArrayList<Integer> nums = new ArrayList<>();
         for (int i = 0; i < SIZE; i++) {
             nums.add((int) (i*(360.0 / SIZE)));
         }
-
-        directionLineLayout = (DirectionLineLayout) findViewById(R.id.directionLineLayout);
 
         directionLineLayout.setStepLines(this, DirectionLineLayout.LayoutOrientation.HORIZONTAL, 2, SIZE, R.color.skv_arrow_color, 80, R.drawable.ic_arrow);
         for (int i = 0; i < directionLineLayout.getSize(); i++) {
@@ -33,6 +44,5 @@ public class MainActivity extends AppCompatActivity {
             int color = Color.HSVToColor(255, new float[]{(float) nums.get(i), 1.0f, 1.0f});
             directionLineLayout.setUnitColor(i, (int) color);
         }
-
     }
 }
