@@ -30,7 +30,7 @@ dependencies {
 }
 ```
 ## Usage
-
+ + angle values - 0 -> 360
 ### Direction-Line Examples:
 
 **360 angle colorful direction line:**
