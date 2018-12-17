@@ -2,8 +2,7 @@
 Library designed to display an array of arrows that can be adjusted direction and color. Can be used for a variety of uses, directions of a particular object at different times, addition to the graph, etc.
 
 
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]
+![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 [![](https://jitpack.io/v/guy-4444/ExternalLogger-Android.svg)](https://jitpack.io/#guy-4444/Direction-Line)
 [![API](https://img.shields.io/badge/API-18%2B-green.svg?style=flat)]()
 
