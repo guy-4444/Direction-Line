@@ -8,11 +8,18 @@
     tools:context=".MainActivity">
 
     <directionlineapp.guy4444.com.directionline.DirectionLineLayout
-        android:id="@+id/directionLineLayout"
+        android:id="@+id/directionLineLayout1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:orientation="horizontal" />
+
+    <directionlineapp.guy4444.com.directionline.DirectionLineLayout
+        android:id="@+id/directionLineLayout2"
+        android:layout_width="match_parent"
+        android:layout_below="@id/directionLineLayout1"
+        android:layout_height="50dp"
         android:layout_margin="5dp"
         android:orientation="horizontal" />
 
